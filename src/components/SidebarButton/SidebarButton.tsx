@@ -1,11 +1,14 @@
-import React, { FC } from 'react';
-import styles from './SidebarButton.module.css';
+import React, { FC } from "react";
+import styles from "./SidebarButton.module.css";
 
-interface SidebarButtonProps {}
+interface SidebarButtonProps {
+  name: string;
+  onClick: Function;
+}
 
-const SidebarButton: FC<SidebarButtonProps> = () => (
+const SidebarButton: FC<SidebarButtonProps> = ({ name, onClick }) => (
   <div className={styles.SidebarButton} data-testid="SidebarButton">
-    SidebarButton Component
+    <button onClick={() => onClick(name)}>{name}</button>
   </div>
 );
 

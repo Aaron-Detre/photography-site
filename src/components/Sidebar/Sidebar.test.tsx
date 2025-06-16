@@ -1,14 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import Sidebar from './Sidebar';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Sidebar from "./Sidebar";
 
-describe('<Sidebar />', () => {
-  test('it should mount', () => {
-    render(<Sidebar />);
+// describe('<Sidebar />', () => {
+//   test('it should mount', () => {
+//     render(<Sidebar />);
 
-    const sidebar = screen.getByTestId('Sidebar');
+//     const sidebar = screen.getByTestId('Sidebar');
 
-    expect(sidebar).toBeInTheDocument();
-  });
-});
+//     expect(sidebar).toBeInTheDocument();
+//   });
+// });

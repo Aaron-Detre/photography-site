@@ -1,11 +1,18 @@
-import React, { FC } from 'react';
-import styles from './Sidebar.module.css';
+import React, { FC } from "react";
+import styles from "./Sidebar.module.css";
+import ContactInfo from "../ContactInfo/ContactInfo";
+import SidebarButton from "../SidebarButton/SidebarButton";
 
-interface SidebarProps {}
+interface SidebarProps {
+  selectPage: Function;
+}
 
-const Sidebar: FC<SidebarProps> = () => (
+const Sidebar: FC<SidebarProps> = ({ selectPage }) => (
   <div className={styles.Sidebar} data-testid="Sidebar">
-    Sidebar Component
+    <SidebarButton name="home" onClick={selectPage} />
+    <SidebarButton name="about" onClick={selectPage} />
+    <SidebarButton name="gear" onClick={selectPage} />
+    <ContactInfo />
   </div>
 );
 
