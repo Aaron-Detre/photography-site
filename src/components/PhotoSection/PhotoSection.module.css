@@ -1,12 +1,8 @@
 .PhotoSection {
-  border: solid 2px red;
   margin: 5px;
+  padding-right: 10px;
+  /* border: solid 4px black; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-img {
-  max-width: 90%;
-  height: auto;
-  padding-bottom: 20px;
+  grid-template-areas: "col1 col2";
+  column-gap: 20px;
 }
