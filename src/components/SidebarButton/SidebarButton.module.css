@@ -1,1 +1,17 @@
-.SidebarButton {}
+.SidebarButton {
+  align-content: center;
+  padding: 5px;
+}
+
+button {
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 10%;
+  font-size: 14pt;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}

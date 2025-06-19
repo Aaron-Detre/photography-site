@@ -1,1 +1,12 @@
-.PhotoSection {}
+.PhotoSection {
+  border: solid 2px red;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+  padding-bottom: 20px;
+}

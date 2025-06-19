@@ -9,24 +9,27 @@ interface AppProps {}
 
 const App: FC<AppProps> = () => {
   const [page, setPage] = useState("home");
-  let content: ReactElement = <></>;
-  switch (page) {
-    case "home":
-      content = <PhotoSection />;
-      break;
-    case "about":
-      content = <AboutMe />;
-      break;
-    case "gear":
-      content = <Gear />;
-      break;
-  }
   return (
-    <div className="App">
-      <Sidebar selectPage={setPage} />
-      {content}
+    <div className="container">
+      <div className="sidebar">
+        <Sidebar selectPage={setPage} />
+      </div>
+      <div className="content">{chooseContent(page)}</div>
     </div>
   );
 };
+
+function chooseContent(page: string): ReactElement {
+  switch (page) {
+    case "home":
+      return <PhotoSection />;
+    case "about":
+      return <AboutMe />;
+    case "gear":
+      return <Gear />;
+    default:
+      return <></>;
+  }
+}
 
 export default App;
