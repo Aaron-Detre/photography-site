@@ -1,7 +1,20 @@
 .GearItem {
   display: flex;
+  padding: 30px;
 }
 
 .GearItem > img {
   max-width: 50%;
+  padding-left: 40px;
+  padding-right: 40px;
+  object-fit: contain;
+}
+
+.GearItem > div > h1 {
+  padding-top: 35px;
+  font-size: 30pt;
+}
+
+.GearItem > div > p {
+  font-size: 18pt;
 }
