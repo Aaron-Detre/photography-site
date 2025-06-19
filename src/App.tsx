@@ -8,7 +8,7 @@ import Gear from "./components/Gear/Gear";
 interface AppProps {}
 
 const App: FC<AppProps> = () => {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState("Aaron Detre");
   return (
     <div className="container">
       <div className="sidebar">
@@ -21,11 +21,11 @@ const App: FC<AppProps> = () => {
 
 function chooseContent(page: string): ReactElement {
   switch (page) {
-    case "home":
+    case "Aaron Detre":
       return <PhotoSection />;
-    case "about":
+    case "About":
       return <AboutMe />;
-    case "gear":
+    case "Gear":
       return <Gear />;
     default:
       return <></>;

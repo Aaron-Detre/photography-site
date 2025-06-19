@@ -9,9 +9,10 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ selectPage }) => (
   <div className={styles.Sidebar} data-testid="Sidebar">
-    <SidebarButton name="home" onClick={selectPage} />
-    <SidebarButton name="about" onClick={selectPage} />
-    <SidebarButton name="gear" onClick={selectPage} />
+    <SidebarButton name="Aaron Detre" onClick={selectPage} />
+    <br />
+    <SidebarButton name="About" onClick={selectPage} />
+    <SidebarButton name="Gear" onClick={selectPage} />
     <ContactInfo />
   </div>
 );

@@ -1,7 +1,7 @@
 .PhotoSection {
   margin: 5px;
+  margin-top: 15px;
   padding-right: 10px;
-  /* border: solid 4px black; */
   display: grid;
   grid-template-areas: "col1 col2";
   column-gap: 20px;

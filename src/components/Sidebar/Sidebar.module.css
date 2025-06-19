@@ -1,18 +1,10 @@
 .Sidebar {
-  display: grid;
-  grid-template-areas:
-    "home"
-    "about"
-    "gear"
-    "contact";
-  grid-template-rows: 3fr 3fr 3fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 5px;
-  height: 300px;
-  border: solid 2px black;
   margin: 5px;
-  position: fixed;
-}
-
-.Sidebar > * {
-  border: solid 1px black;
+  margin-right: 15px;
+  position: sticky;
+  top: 30px;
+  line-height: 10px;
 }
