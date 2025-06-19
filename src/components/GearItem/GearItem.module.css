@@ -1,0 +1,7 @@
+.GearItem {
+  display: flex;
+}
+
+.GearItem > img {
+  max-width: 50%;
+}
