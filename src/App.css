@@ -1,9 +1,5 @@
 .container {
-  /* display: grid;
-  grid-template-areas: "sidebar content";
-  grid-template-columns: 1fr 7fr; */
   display: flex;
   gap: 5px;
-  /* border: solid 5px black; */
   margin: 5px;
 }

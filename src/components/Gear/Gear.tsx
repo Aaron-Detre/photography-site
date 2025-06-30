@@ -10,7 +10,7 @@ const Gear: FC<GearProps> = () => (
       photoUrl="/gear/em10-4.png"
       photoAlt="Olympus OM-D EM-10 Mark IV camera body"
       name="Olympus OM-D EM-10 Mark IV"
-      text="My first (and only) real camera body. I've had it since June 2024, and every picture on this site and on my Instagram was taken on this camera."
+      text="My first (and only) real camera body. I've had it since June 2024, and every picture on this site and on my Instagram was taken using this camera."
       photoFirst={true}
       photoWidth="45%"
     />
