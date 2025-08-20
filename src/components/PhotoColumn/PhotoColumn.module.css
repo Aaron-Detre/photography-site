@@ -8,3 +8,7 @@
   max-width: 100%;
   height: auto;
 }
+
+.PhotoColumn > img:hover {
+  cursor: pointer;
+}

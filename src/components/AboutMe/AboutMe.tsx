@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import styles from './AboutMe.module.css';
+import React, { FC } from "react";
+import styles from "./AboutMe.module.css";
 
 interface AboutMeProps {}
 

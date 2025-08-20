@@ -10,7 +10,7 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ currentPage, selectPage }) => {
   const home = getSidebarButton("Home", currentPage, selectPage);
-  const about = getSidebarButton("About", currentPage, selectPage);
+  // const about = getSidebarButton("About", currentPage, selectPage);
   const gear = getSidebarButton("Gear", currentPage, selectPage);
   return (
     <div className={styles.Sidebar} data-testid="Sidebar">
@@ -22,7 +22,7 @@ const Sidebar: FC<SidebarProps> = ({ currentPage, selectPage }) => {
       />
       <br />
       {home}
-      {about}
+      {/* {about} */}
       {gear}
       <ContactInfo />
     </div>

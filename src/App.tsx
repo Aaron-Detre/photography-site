@@ -2,31 +2,42 @@ import React, { FC, ReactElement, useState } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PhotoSection from "./components/PhotoSection/PhotoSection";
-import AboutMe from "./components/AboutMe/AboutMe";
+// import AboutMe from "./components/AboutMe/AboutMe";
 import Gear from "./components/Gear/Gear";
+import CarouselView from "./components/CarouselView/CarouselView";
 
 interface AppProps {}
 
 const App: FC<AppProps> = () => {
   const [page, setPage] = useState("Home");
-  return (
-    <div className="container">
-      <div className="sidebar">
-        <Sidebar currentPage={page} selectPage={setPage} />
+  const [carousel, setCarousel] = useState("");
+
+  let view: ReactElement;
+  if (carousel === "") {
+    view = (
+      <div className="container">
+        <div className="sidebar">
+          <Sidebar currentPage={page} selectPage={setPage} />
+        </div>
+        <div className="content">{chooseContent(page, setCarousel)}</div>
       </div>
-      <div className="content">{chooseContent(page)}</div>
-    </div>
-  );
+    );
+  } else {
+    view = <CarouselView currentPhoto={carousel} setCarousel={setCarousel} />;
+  }
+
+  return view;
 };
 
-function chooseContent(page: string): ReactElement {
+function chooseContent(page: string, setCarousel: Function): ReactElement {
+  const photoSection = <PhotoSection setCarousel={setCarousel} />;
   switch (page) {
     case "Aaron Detre":
-      return <PhotoSection />;
+      return photoSection;
     case "Home":
-      return <PhotoSection />;
-    case "About":
-      return <AboutMe />;
+      return photoSection;
+    // case "About":
+    //  return <AboutMe />;
     case "Gear":
       return <Gear />;
     default:

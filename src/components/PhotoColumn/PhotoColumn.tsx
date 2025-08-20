@@ -1,14 +1,18 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import styles from "./PhotoColumn.module.css";
 
 interface PhotoColumnProps {
   photoNames: string[];
+  setCarousel: Function;
 }
 
-const PhotoColumn: FC<PhotoColumnProps> = ({ photoNames }) => (
-  <div className={styles.PhotoColumn} data-testid="PhotoColumn">
+const PhotoColumn: FC<PhotoColumnProps> = ({ photoNames, setCarousel }) => (
+  <div className={styles.PhotoColumn}>
     {photoNames.map((photoName) => (
-      <img src={`/pictures/${photoName}`} />
+      <img
+        src={`/pictures/${photoName}`}
+        onClick={() => setCarousel(photoName)}
+      />
     ))}
   </div>
 );
