@@ -7,7 +7,7 @@ import photoOrdering from "../../photoOrdering.json";
 
 interface CarouselViewProps {
   currentPhoto: string;
-  setCarousel: Function; // Set carousel to "" when exit carousel view
+  setCarousel: Function;
 }
 
 const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
