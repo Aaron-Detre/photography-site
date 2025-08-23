@@ -1,1 +1,45 @@
-.CarouselView {}
+.flexContainer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.flexContainer > img {
+  margin: 0px 20px;
+  user-select: none;
+}
+
+.arrow {
+  height: 75px;
+  width: 75px;
+  position: absolute;
+}
+
+.arrowActive:hover {
+  cursor: pointer;
+}
+
+.arrowInactive {
+  color: rgb(99, 99, 99);
+}
+
+.leftArrow {
+  left: 0;
+}
+
+.rightArrow {
+  right: 0;
+}
+
+.exit {
+  width: 65px;
+  height: 65px;
+  margin: 5px;
+  position: absolute;
+  right: 0;
+}
+
+.exit:hover {
+  cursor: pointer;
+}
