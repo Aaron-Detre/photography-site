@@ -3,6 +3,17 @@
   margin-top: 15px;
   padding-right: 10px;
   display: grid;
-  grid-template-areas: "col1 col2";
   column-gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .PhotoSection {
+    grid-template-areas: "col";
+  }
+}
+
+@media (min-width: 901px) {
+  .PhotoSection {
+    grid-template-areas: "col1 col2";
+  }
 }

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import styles from "./PhotoSection.module.css";
 import photoOrdering from "../../photoOrdering.json";
 import PhotoColumn from "../PhotoColumn/PhotoColumn";
@@ -8,13 +8,16 @@ interface PhotoSectionProps {
 }
 
 const PhotoSection: FC<PhotoSectionProps> = ({ setCarousel }) => {
-  const photoCol1 = getPhotoColumn(true);
-  const photoCol2 = getPhotoColumn(false);
-
   return (
-    <div className={styles.PhotoSection} data-testid="PhotoSection">
-      <PhotoColumn photoNames={photoCol1} setCarousel={setCarousel} />
-      <PhotoColumn photoNames={photoCol2} setCarousel={setCarousel} />
+    <div className={styles.PhotoSection}>
+      <PhotoColumn
+        photoNames={getPhotoColumn(true)}
+        setCarousel={setCarousel}
+      />
+      <PhotoColumn
+        photoNames={getPhotoColumn(false)}
+        setCarousel={setCarousel}
+      />
     </div>
   );
 };

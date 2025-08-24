@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import styles from "./CarouselView.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
@@ -16,6 +16,19 @@ const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
   const isLeftArrowActive = currentPhotoIndex !== 0;
   const isRightArrowActive = currentPhotoIndex !== photoOrdering.length - 1;
 
+  let widthLimit = setWidthLimiter();
+  let heightLimit = setHeightLimiter();
+
+  useEffect(() => {
+    function updatePhotoSizeLimiters(): void {
+      widthLimit = setWidthLimiter();
+      heightLimit = setHeightLimiter();
+    }
+
+    window.addEventListener("resize", updatePhotoSizeLimiters);
+    return () => window.removeEventListener("resize", updatePhotoSizeLimiters);
+  }, []);
+
   return (
     <div className={styles.CarouselView}>
       <RxCross2
@@ -31,13 +44,7 @@ const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
             }
           }}
         />
-        <img
-          src={`/pictures/${currentPhoto}`}
-          style={{
-            maxWidth: window.innerWidth * 0.85,
-            maxHeight: window.innerHeight * 0.9,
-          }}
-        />
+        <img src={`/pictures/${currentPhoto}`} />
         <IoIosArrowForward
           className={getArrowClassNames(isRightArrowActive, false)}
           onClick={() => {
@@ -50,6 +57,14 @@ const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
     </div>
   );
 };
+
+function setWidthLimiter(): number {
+  return window.innerWidth * 0.85;
+}
+
+function setHeightLimiter(): number {
+  return window.innerHeight * 0.9;
+}
 
 function findPhotoIndex(photoName: string): number {
   return photoOrdering.findIndex((photo) => photo.name === photoName);
@@ -64,7 +79,6 @@ function changePhoto(currentPhotoIndex: number, indexChange: number): string {
 
   const nextPhoto =
     photoOrdering.at(currentPhotoIndex + indexChange)?.name ?? "";
-  console.log(nextPhoto);
   return nextPhoto;
 }
 
