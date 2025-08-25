@@ -8,9 +8,14 @@ import photoOrdering from "../../photoOrdering.json";
 interface CarouselViewProps {
   currentPhoto: string;
   setCarousel: Function;
+  isDarkMode: boolean;
 }
 
-const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
+const CarouselView: FC<CarouselViewProps> = ({
+  currentPhoto,
+  setCarousel,
+  isDarkMode,
+}) => {
   const currentPhotoIndex = findPhotoIndex(currentPhoto);
 
   const isLeftArrowActive = currentPhotoIndex !== 0;
@@ -30,7 +35,9 @@ const CarouselView: FC<CarouselViewProps> = ({ currentPhoto, setCarousel }) => {
   }, []);
 
   return (
-    <div className={styles.CarouselView}>
+    <div
+      className={`${styles.CarouselView} ${isDarkMode ? styles.darkMode : ""}`}
+    >
       <RxCross2
         className={styles.exit}
         onClick={() => updateCarousel(setCarousel, "")}

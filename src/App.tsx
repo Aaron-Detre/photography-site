@@ -11,19 +11,29 @@ interface AppProps {}
 const App: FC<AppProps> = () => {
   const [page, setPage] = useState("Home");
   const [carousel, setCarousel] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   let view: ReactElement;
   if (carousel === "") {
     view = (
-      <div className="container">
-        <div className="sidebar">
-          <Sidebar currentPage={page} selectPage={setPage} />
-        </div>
-        <div className="content">{chooseContent(page, setCarousel)}</div>
+      <div className={`container ${isDarkMode ? "darkMode" : ""}`}>
+        <Sidebar
+          currentPage={page}
+          selectPage={setPage}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
+        <div>{chooseContent(page, setCarousel)}</div>
       </div>
     );
   } else {
-    view = <CarouselView currentPhoto={carousel} setCarousel={setCarousel} />;
+    view = (
+      <CarouselView
+        currentPhoto={carousel}
+        setCarousel={setCarousel}
+        isDarkMode={isDarkMode}
+      />
+    );
   }
 
   return view;

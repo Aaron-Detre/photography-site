@@ -6,6 +6,7 @@ interface SidebarButtonProps {
   displayText: string;
   isCurrentPage: boolean;
   onClick: Function;
+  isDarkMode: boolean;
 }
 
 const SidebarButton: FC<SidebarButtonProps> = ({
@@ -13,11 +14,14 @@ const SidebarButton: FC<SidebarButtonProps> = ({
   displayText,
   isCurrentPage,
   onClick,
+  isDarkMode,
 }) => (
   <div className={styles.SidebarButton} data-testid="SidebarButton">
     <button
       onClick={() => onClick(displayPage)}
-      className={isCurrentPage ? styles.currentPage : ""}
+      className={`${isCurrentPage ? styles.currentPage : ""} ${
+        isDarkMode ? styles.darkMode : ""
+      }`}
     >
       {displayText}
     </button>

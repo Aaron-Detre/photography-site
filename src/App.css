@@ -3,3 +3,8 @@
   gap: 5px;
   margin: 5px;
 }
+
+html:has(.darkMode) {
+  background-color: black;
+  color: white;
+}

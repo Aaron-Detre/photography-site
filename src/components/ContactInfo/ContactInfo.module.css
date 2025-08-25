@@ -9,10 +9,18 @@ a {
   font-size: 24px;
 }
 
+.darkMode {
+  color: white;
+}
+
 .ContactInfo:hover > a {
   color: gray;
 }
 
 a:hover {
   color: black !important;
+}
+
+a.darkMode:hover {
+  color: white !important;
 }

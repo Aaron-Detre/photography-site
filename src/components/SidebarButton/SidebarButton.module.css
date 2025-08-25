@@ -21,3 +21,12 @@ button:hover {
 .currentPage {
   color: #9c9b9b;
 }
+
+.darkMode {
+  background-color: black;
+  color: white;
+}
+
+.currentPage.darkMode {
+  color: #a4a4a4;
+}

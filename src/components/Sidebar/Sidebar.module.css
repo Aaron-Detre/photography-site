@@ -7,4 +7,11 @@
   position: sticky;
   top: 30px;
   line-height: 10px;
+  height: 810px;
+}
+
+.darkModeButton {
+  margin-top: auto;
+  margin-bottom: 0;
+  margin-left: 5px;
 }

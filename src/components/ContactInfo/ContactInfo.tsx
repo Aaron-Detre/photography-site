@@ -4,20 +4,32 @@ import { FaInstagram } from "react-icons/fa";
 import { VscGithub } from "react-icons/vsc";
 import { MdOutlineEmail } from "react-icons/md";
 
-interface ContactInfoProps {}
+interface ContactInfoProps {
+  isDarkMode: boolean;
+}
 
-const ContactInfo: FC<ContactInfoProps> = () => (
-  <div className={styles.ContactInfo} data-testid="ContactInfo">
-    <a href="https://www.instagram.com/aaronscameraphotos/">
-      <FaInstagram />
-    </a>
-    <a href="mailto:aarondetre@gmail.com">
-      <MdOutlineEmail />
-    </a>
-    <a href="https://github.com/Aaron-Detre">
-      <VscGithub />
-    </a>
-  </div>
-);
+const ContactInfo: FC<ContactInfoProps> = ({ isDarkMode }) => {
+  const darkModeClass = isDarkMode ? styles.darkMode : "";
+
+  return (
+    <div
+      className={`${styles.ContactInfo} ${darkModeClass}`}
+      data-testid="ContactInfo"
+    >
+      <a
+        className={darkModeClass}
+        href="https://www.instagram.com/aaronscameraphotos/"
+      >
+        <FaInstagram />
+      </a>
+      <a className={darkModeClass} href="mailto:aarondetre@gmail.com">
+        <MdOutlineEmail />
+      </a>
+      <a className={darkModeClass} href="https://github.com/Aaron-Detre">
+        <VscGithub />
+      </a>
+    </div>
+  );
+};
 
 export default ContactInfo;

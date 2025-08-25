@@ -23,7 +23,7 @@
 }
 
 .arrowInactive {
-  color: rgb(99, 99, 99);
+  color: rgb(135, 135, 135);
 }
 
 .leftArrow {
@@ -44,4 +44,20 @@
 
 .exit:hover {
   cursor: pointer;
+}
+
+.darkMode {
+  background-color: black;
+}
+
+.darkMode > .exit {
+  color: white;
+}
+
+.darkMode > .flexContainer > .arrow {
+  color: white;
+}
+
+.darkMode > .flexContainer > .arrowInactive {
+  color: rgb(95, 95, 95);
 }
