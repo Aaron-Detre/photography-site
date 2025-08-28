@@ -1,6 +1,7 @@
 .GearItem {
   display: flex;
   padding: 30px;
+  font-family: "NunitoSans";
 }
 
 .GearItem > img {
@@ -13,8 +14,10 @@
 .GearItem > div > h1 {
   padding-top: 35px;
   font-size: 30pt;
+  font-weight: 800;
 }
 
 .GearItem > div > p {
   font-size: 18pt;
+  font-weight: 500;
 }

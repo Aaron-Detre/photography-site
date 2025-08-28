@@ -12,6 +12,8 @@ button {
   font-size: 24pt;
   text-align: left;
   width: 100%;
+  font-family: "NunitoSans";
+  font-weight: 600;
 }
 
 button:hover {
