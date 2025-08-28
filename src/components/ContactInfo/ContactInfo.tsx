@@ -19,13 +19,18 @@ const ContactInfo: FC<ContactInfoProps> = ({ isDarkMode }) => {
       <a
         className={darkModeClass}
         href="https://www.instagram.com/aaronscameraphotos/"
+        target="_blank"
       >
         <FaInstagram />
       </a>
       <a className={darkModeClass} href="mailto:aarondetre@gmail.com">
         <MdOutlineEmail />
       </a>
-      <a className={darkModeClass} href="https://github.com/Aaron-Detre">
+      <a
+        className={darkModeClass}
+        href="https://github.com/Aaron-Detre"
+        target="_blank"
+      >
         <VscGithub />
       </a>
     </div>
